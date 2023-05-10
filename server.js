@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/pokemon', (req,res)=>{
-    res.render('Index', {pokemon:pokemon})
+    res.render('Index', { pokemon : pokemon })
 })
 
 // Tell express to Listen
