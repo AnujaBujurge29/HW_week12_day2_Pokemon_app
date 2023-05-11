@@ -8,21 +8,18 @@ const myStyle = {
 };
 class Index extends React.Component {
   render() {
-    const { pokemon } = this.props;
+    const { sample } = this.props;
     return (
       <div>
         <h1 style={myStyle}>Index Page</h1>
         <ul>
-          {pokemon.map((item, i) => {
+          {sample.map((item, i) => {
             return (
-              <div style={myStyle}>
-                <p key={item.name}>
+              <li style={myStyle} key={item.name}>
+                <h2>
                   <a href={`/pokemon/${i}`}>{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</a>
-                  
-                  <br />
-                  {/* <img src={item.img} alt="NA"></img> */}
-                </p>
-              </div>
+                </h2>
+              </li>
             );
           })}
         </ul>

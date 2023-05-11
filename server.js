@@ -7,14 +7,17 @@ const pokemon = require('./models/pokemon') // Import Data
 //======================== Middlware=================================
 app.set("view engine", "jsx");
 app.engine("jsx", require("jsx-view-engine").createEngine());
-// ====================Routes =======================================
+// =======================Routes ====================================
 // Home Page 
 app.get('/',(req,res)=>{
+    // res.send(pokemon)
     res.send('Welcome to the Pokemon App!!')
 })
 // Index Page with list of Pokemon Names
 app.get('/pokemon', (req,res)=>{
-    res.render('Index', { pokemon : pokemon })
+    res.render('Index', { sample : pokemon })// 2nd para object
+    // sample = data/variable to pass to Index
+    // pokemon = data from ./models/pokemon file
 })
 // Show page with each pokemon details
 app.get('/pokemon/:id',(req, res)=>{
